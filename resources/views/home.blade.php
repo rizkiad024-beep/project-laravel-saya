@@ -198,8 +198,9 @@
             color: #ffffff;
             font-weight: 700;
             padding: 14px 16px;
-            background: linear-gradient(135deg, #2563EB, #1D4ED8);
+            background: linear-gradient(135deg, #2563EB, #1D4ED8, #7C3AED);
             border: none;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
 
         .modern-table thead th:first-child {
@@ -213,11 +214,11 @@
         }
 
         .modern-table tbody tr {
-            background: #F8FBFF;
+            background: linear-gradient(90deg, #F8FBFF 0%, #EFF6FF 100%);
         }
 
         .modern-table tbody tr:nth-child(even) {
-            background: #EFF6FF;
+            background: linear-gradient(90deg, #EEF2FF 0%, #F5F3FF 100%);
         }
 
         .modern-table td {
@@ -232,7 +233,7 @@
         }
 
         .modern-table tbody tr:hover {
-            background: #DBEAFE;
+            background: linear-gradient(90deg, #DBEAFE 0%, #E0E7FF 100%);
         }
 
         .section-divider {
@@ -347,7 +348,7 @@
                     <tbody>
                         <tr>
                             <td>Info</td>
-                            <td><a href="{{ route('info.latest') }}">Lihat info terbaru</a></td>
+                            <td><a href="https://kominfo.babelprov.go.id" target="_blank">Kunjungi website resmi</a></td>
                         </tr>
                         <tr>
                             <td>Alamat</td>
@@ -364,16 +365,6 @@
                             <td>
                                 @if(isset($info) && $info && $info->ig_link)
                                     <a href="{{ $info->ig_link }}" target="_blank">Buka Instagram</a>
-                                @else
-                                    Belum tersedia
-                                @endif
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>WhatsApp</td>
-                            <td>
-                                @if(isset($info) && $info && $info->whatsapp)
-                                    <a href="https://wa.me/{{ ltrim($info->whatsapp,'+') }}" target="_blank">Chat via WhatsApp</a>
                                 @else
                                     Belum tersedia
                                 @endif
